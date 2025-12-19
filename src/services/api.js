@@ -2,7 +2,7 @@ import axios from 'axios';
 import { API_ENDPOINTS } from '../config';
 
 const api = axios.create({
-  baseURL: 'http://0.0.0.0:8000',
+  baseURL: 'https://ml-fraud-check.onrender.com',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
