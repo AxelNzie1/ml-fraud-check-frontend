@@ -941,3 +941,76 @@ body {
     }
 }
 EOF
+
+/* Ajoutez ces styles à la fin de votre fichier App.css */
+
+.explanation-item {
+  transition: var(--transition);
+}
+
+.explanation-item:hover {
+  transform: translateX(5px);
+  background: var(--bg-gray) !important;
+}
+
+/* Amélioration des badges de statut */
+.status-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.status-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.status-badge:hover::after {
+  opacity: 1;
+}
+
+/* Animation pour les résultats fraude */
+.result-status.fraud {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Style pour les détails de simulation */
+.detail-item[style*="background: rgba(255, 193, 7, 0.1)"] {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Indicateur visuel pour la barre de probabilité */
+.probability-bar {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+/* Indicateur de seuil sur la barre */
+.probability-bar::before {
+  content: 'Seuil (50%)';
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
